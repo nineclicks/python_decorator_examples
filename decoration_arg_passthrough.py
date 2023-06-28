@@ -1,4 +1,4 @@
-def generic_annotation_fn(fn):
+def generic_decorator_fn(fn):
     # We capture all positional and named args and pass them into the original function
     def wrapper_fn(*args, **kwargs):
         print('wrapper start')
@@ -7,18 +7,18 @@ def generic_annotation_fn(fn):
 
     return wrapper_fn
 
-def specific_annotation_fn(fn):
+def specific_decorator_fn(fn):
     # We know and care what specific params will be passed into this fn
     def wrapper_fn(message):
         fn(message.upper() + '!!!!!!')
 
     return wrapper_fn
 
-@generic_annotation_fn
+@generic_decorator_fn
 def original_fn_1(message):
     print(message)
 
-@specific_annotation_fn
+@specific_decorator_fn
 def original_fn_2(message):
     print(message)
 

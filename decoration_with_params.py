@@ -1,4 +1,4 @@
-# Annotation with parameters
+# Decoration with parameters
 # Use a double closure. The outer closure handles the parameters and
 # the inner closure.
 # You need to return both inner functions.:w

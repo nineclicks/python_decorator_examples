@@ -1,8 +1,8 @@
 from time import sleep
 from threading import Thread
 
-# Using an annotation to register a function for something like an event
-# The annotation saves a reference to the annotated function, but it just
+# Using a decorator to register a function for something like an event
+# The decoration saves a reference to the decorated function, but it just
 # returns the same function, so no change is made
 
 class Timer:
@@ -20,7 +20,7 @@ class Timer:
         print('Starting timer')
         self.timer_thread.start()
 
-    # This is the annotation function. Notice we are just saving a
+    # This is the decorator function. Notice we are just saving a
     # reference to it and returning the same function back
     def register(self, fn):
         print('Registering function to timer')
